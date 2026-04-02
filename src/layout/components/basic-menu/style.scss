@@ -1,0 +1,221 @@
+@use 'sass:map';
+
+@mixin menu-item($bottom: 4px) {
+  margin-bottom: $bottom;
+  border-radius: var(--radius);
+}
+
+@mixin menu-active-style {
+  color: var(--menu-active-text-color) !important;
+  background-color: var(--menu-active-bg-color) !important;
+}
+
+@mixin menu-hover-style {
+  background-color: var(--menu-hover-bg-color);
+}
+
+@mixin menu-icon($type, $right: var(--menu-item-icon-gap), $size: var(--menu-item-icon-size)) {
+  @if $type == 'sub' {
+    .menu-sub-i {
+      margin-right: $right;
+
+      .menu-sub-icon {
+        font-size: $size;
+      }
+    }
+  }
+
+  @if $type == 'item' {
+    .menu-item-i {
+      margin-right: $right;
+
+      .menu-item-icon {
+        font-size: $size;
+      }
+    }
+  }
+}
+
+ul.el-menu.basic-menu {
+  --el-menu-text-color: var(--menu-text-color);
+  --el-menu-active-color: var(--menu-text-color);
+  --el-menu-bg-color: var(--sidebar-bg-color);
+  --el-menu-hover-bg-color: var(--menu-active-bg-color);
+  --el-menu-item-height: var(--size-32);
+  --el-menu-sub-item-height: var(--size-32);
+  --el-menu-item-hover-fill: var(--menu-active-bg-color);
+  --el-menu-level-padding: var(--menu-item-level-spacing);
+
+  &.el-menu--vertical {
+    border-right: unset;
+
+    & .el-menu-item {
+      @include menu-item;
+      @include menu-icon('item');
+
+      &.is-active {
+        @include menu-active-style;
+      }
+
+      &:hover {
+        @include menu-hover-style;
+      }
+    }
+
+    & .el-sub-menu {
+      &__title {
+        @include menu-item;
+        @include menu-icon('sub');
+
+        &:hover {
+          @include menu-hover-style;
+        }
+      }
+
+      &.is-active {
+        .el-sub-menu__title {
+          color: var(--menu-text-color);
+        }
+      }
+    }
+  }
+
+  &.el-menu--collapse {
+    width: var(--size-32);
+
+    & .el-sub-menu {
+      border-radius: var(--radius);
+
+      &.is-active {
+        .el-sub-menu__title {
+          @include menu-active-style;
+        }
+      }
+
+      .el-sub-menu__title {
+        justify-content: center;
+        padding: 0;
+
+        &:hover {
+          @include menu-hover-style;
+        }
+
+        @include menu-icon('sub', 0, 16px);
+      }
+    }
+
+    & .el-menu-item {
+      padding: 0;
+
+      &:hover {
+        @include menu-hover-style;
+      }
+
+      &.is-active {
+        @include menu-active-style;
+      }
+
+      & > div.el-menu-tooltip__trigger {
+        justify-content: center;
+        padding: 0;
+
+        @include menu-icon('item', 0, 16px);
+      }
+    }
+  }
+
+  &.el-menu--horizontal {
+    gap: 0 4px;
+    border-bottom: unset;
+
+    --el-menu-horizontal-height: var(--size-32);
+
+    .el-sub-menu {
+      @include menu-icon('sub', 6px);
+
+      &__title {
+        border-bottom: unset;
+        border-radius: var(--radius);
+      }
+
+      &.is-active .el-sub-menu__title {
+        border-bottom: unset;
+
+        @include menu-hover-style;
+      }
+
+      &:hover .el-sub-menu__title {
+        @include menu-hover-style;
+
+        color: var(--menu-text-color);
+      }
+    }
+
+    .el-menu-item {
+      @include menu-icon('item', 6px);
+
+      // --el-menu-active-color: var(--menu-active-text-color);
+      --el-menu-hover-text-color: var(--menu-text-color);
+
+      border-bottom: unset;
+      border-radius: var(--radius);
+
+      &.is-active {
+        @include menu-active-style;
+      }
+
+      &:not(.is-disabled) {
+        &:hover {
+          background-color: var(--menu-hover-bg-color);
+        }
+
+        &:focus {
+          background-color: var(--menu-hover-bg-color);
+        }
+      }
+    }
+  }
+}
+
+div.basic-menu.el-popper {
+  border-radius: var(--radius);
+
+  --el-menu-horizontal-sub-item-height: var(--size-32);
+  --el-menu-item-height: var(--size-32);
+
+  .el-menu.el-menu--popup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px 0;
+    padding: 4px;
+    border-radius: var(--radius);
+
+    .el-menu-item {
+      @include menu-item(0);
+      @include menu-icon('item');
+
+      &.is-active {
+        @include menu-active-style;
+      }
+
+      &:hover {
+        color: var(--menu-text-color);
+
+        @include menu-hover-style;
+      }
+    }
+
+    .el-sub-menu {
+      &__title {
+        @include menu-item(0);
+        @include menu-icon('sub');
+      }
+
+      &.is-active {
+        .el-sub-menu__title {
+          color: var(--el-color-primary);
+        }
+      }
+    }
+  }
+}

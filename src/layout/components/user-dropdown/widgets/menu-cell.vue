@@ -1,0 +1,31 @@
+<script setup lang="ts">
+import { cn } from '@/utils';
+
+defineOptions({
+  name: 'MenuCell',
+});
+
+interface MenuCellProps {
+  icon: string;
+  title: string;
+  textClass?: string;
+}
+
+withDefaults(defineProps<MenuCellProps>(), {});
+</script>
+
+<template>
+  <div
+    class="w-full px-2 py-1.5 flex items-center justify-between hover:bg-el-fill rounded-lg cursor-pointer duration-300"
+  >
+    <div :class="cn('flex items-center gap-x-2 text-el-text-primary text-sm', textClass)">
+      <IconifyIcon :name="icon" class="text-sm" />
+      <span>{{ title }}</span>
+    </div>
+    <div v-if="$slots.default">
+      <slot />
+    </div>
+  </div>
+</template>
+
+<style scoped lang="scss"></style>
