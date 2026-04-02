@@ -90,6 +90,37 @@ export const ROUTE_NAMES = {
   /** 关于项目 */
   ABOUT_PROJECT: 'AboutProject',
 
+  /** 快速活体检测系统 */
+  FACE_SYSTEM: 'FaceSystem',
+  /** 系统总览 */
+  FACE_SYSTEM_OVERVIEW: 'FaceSystemOverview',
+  /** 人脸识别模块 */
+  FACE_SYSTEM_RECOGNITION: 'FaceSystemRecognition',
+  /** 活体检测模块 */
+  FACE_SYSTEM_LIVENESS: 'FaceSystemLiveness',
+  /** 活体判定逻辑 */
+  FACE_SYSTEM_DECISION: 'FaceSystemDecision',
+  /** 防攻击测试模块 */
+  FACE_SYSTEM_ANTI_ATTACK: 'FaceSystemAntiAttack',
+  /** 智能防撞报警模块 */
+  FACE_SYSTEM_COLLISION: 'FaceSystemCollision',
+  /** 配置变更模块 */
+  FACE_SYSTEM_CONFIG: 'FaceSystemConfig',
+  /** 安装部署模块 */
+  FACE_SYSTEM_DEPLOY: 'FaceSystemDeploy',
+  /** 操作说明模块 */
+  FACE_SYSTEM_OPERATION: 'FaceSystemOperation',
+  /** 测试报告模块 */
+  FACE_SYSTEM_REPORT: 'FaceSystemReport',
+  /** 人员档案管理 */
+  FACE_SYSTEM_PERSONNEL: 'FaceSystemPersonnel',
+  /** 活体策略管理 */
+  FACE_SYSTEM_STRATEGY: 'FaceSystemStrategy',
+  /** 验证记录查询 */
+  FACE_SYSTEM_RECORDS: 'FaceSystemRecords',
+  /** 报警事件管理 */
+  FACE_SYSTEM_ALARMS: 'FaceSystemAlarms',
+
   /** 示例 */
   EXAMPLES: 'Examples',
   /** 示例 Element Plus */

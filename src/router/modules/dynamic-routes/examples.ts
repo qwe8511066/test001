@@ -9,6 +9,7 @@ const examplesRoutes: CustomRouteRecordRaw = {
     title: '示例简介',
     sort: 3,
     menuIcon: 'ri:presentation-line',
+    hideMenu: true,
   },
   children: [
     {

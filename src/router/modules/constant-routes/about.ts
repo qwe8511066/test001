@@ -9,6 +9,7 @@ const aboutRoutes: CustomRouteRecordRaw = {
     title: '关于',
     sort: 99,
     menuIcon: 'ri:information-line',
+    hideMenu: true,
     hideParentIfSingleChild: true, // 当只有一个子菜单时，隐藏父级菜单直接显示子菜单内容
   },
   children: [
@@ -19,6 +20,7 @@ const aboutRoutes: CustomRouteRecordRaw = {
       meta: {
         title: '关于项目',
         menuIcon: 'ri:copyright-line',
+        hideMenu: true,
       },
     },
   ],

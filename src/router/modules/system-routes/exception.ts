@@ -8,6 +8,7 @@ const exceptionRoutes: CustomRouteRecordRaw = {
     title: '异常页',
     sort: 2,
     menuIcon: 'ri:error-warning-line',
+    hideMenu: true,
   },
   children: [
     {
