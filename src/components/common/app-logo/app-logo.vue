@@ -5,6 +5,7 @@ import { computed } from 'vue';
 import { omit } from 'lodash-es';
 import { cn } from '@/utils';
 
+import Logo from '@/assets/images/logo.png';
 defineOptions({
   name: 'AppLogo',
 });
@@ -54,9 +55,10 @@ const getLocalIconProps = computed(() => {
 
 <template>
   <div :class="cn('flex items-center gap-x-2', clickable && 'cursor-pointer', logoClass)">
-    <div class="border border-el-border rounded size-7 flex items-center justify-center">
+    <!-- <div class="border border-el-border rounded size-7 flex items-center justify-center">
       <LocalIcon v-bind="getLocalIconProps" />
-    </div>
+    </div> -->
+    <img :src="Logo" alt="logo" class="size-7" />
     <Transition :name="PAGE_TRANSITION_ENUM.NONE">
       <span
         v-show="showTitle"

@@ -15,7 +15,6 @@
     "build": "vite build --mode production -c build/vite.config.ts",
     "preview": "vite preview -c build/vite.config.ts",
     "cache:clear": "rimraf node_modules/.cache node_modules/.vite .eslintcache .stylelintcache .prettier-cache",
-    "prepare": "husky",
     "commit": "git-cz",
     "view:eslint": "eslint-config-inspector --config eslint.config.js",
     "vite": "vite --debug transform -c build/vite.config.ts",
